@@ -9,26 +9,41 @@ import SwiftUI
 
 struct InviteCodeView: View {
     @ObservedObject var viewModel: InviteCodeViewModel
+    @State private var is_loading: Bool = false
+    @State private var showAlert: Bool = false
+    @State private var alertMessage: String = ""
+
     
     var body: some View{
         switch viewModel.step {
         case 0:
-            HStack{
-                TextField("ur invite code", text: $viewModel.inv_code)
-                    .textInputAutocapitalization(.never)
-                    .disableAutocorrection(true)
-                    .transition(.slide)
-                Button(action: {
-                    Task{
-                        await viewModel.check_inv_code()
+            ZStack{
+                VStack{
+                    HStack{
+                        TextField("ur invite code", text: $viewModel.inv_code)
+                            .textInputAutocapitalization(.never)
+                            .disableAutocorrection(true)
+                            .transition(.slide)
+                        Button(action:
+                            {
+                            is_loading = true
+                            Task{
+                                await viewModel.check_inv_code()
+                                is_loading = false
+                            }
+                        })
+                        {
+                            Text("join a fam <3")
+                        }.buttonStyle(.borderedProminent)
+                        .clipShape(Capsule())
+                        .transition(.slide)
+                        .disabled(is_loading)
+                        .tint(.cyan)
                     }
-                })
-                {
-                    Text("join a fam <3")
-                }.buttonStyle(.borderedProminent)
-                .clipShape(Capsule())
-                .transition(.slide)
-                .tint(.pink)
+                }
+                if is_loading {
+                        ProgressIndicatorView()
+                    }
             }
         case 1:
             HStack{
@@ -37,23 +52,84 @@ struct InviteCodeView: View {
                     .disableAutocorrection(true)
                     .keyboardType(.emailAddress)
                     .transition(.slide)
-                Button(action: viewModel.next_step){
+                Button(action: {
+                    is_loading = true
+                    Task{
+                        do{
+                            //check the email's validity here
+                            //try await viewModel.check_email()
+                            viewModel.next_step()
+                        }
+                        catch{
+                            viewModel.handle(error: error)
+                        }
+                        is_loading = false
+                    }
+                }){
                     Text("yep")
                 }.buttonStyle(.borderedProminent)
                 .clipShape(Capsule())
                 .transition(.slide)
             }
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text("Error"),
+                      message: Text(viewModel.error_message ?? "An unknown error occurred"),
+                      dismissButton: .default(Text("OK")) {
+                          viewModel.error_message = nil
+                            showAlert = false
+                      })
+            }
+            .onChange(of: viewModel.error_message) { newErrorMessage in
+                print("onChange triggered with message: \(String(describing: newErrorMessage))")
+                if let _ = newErrorMessage {
+                    showAlert = true
+                }
+            }
         case 2:
-            HStack{
-                SecureField("create ur password", text: $viewModel.password)
-                    .textInputAutocapitalization(.never)
-                    .disableAutocorrection(true)
-                    .transition(.slide)
-                Button(action: viewModel.create_user){
-                    Text("yep")
-                }.buttonStyle(.borderedProminent)
-                .clipShape(Capsule())
-                .transition(.slide)
+            ZStack{
+                VStack{
+                    HStack{
+                        SecureField("create ur password", text: $viewModel.password)
+                            .textInputAutocapitalization(.never)
+                            .disableAutocorrection(true)
+                            .transition(.slide)
+                        Button(action: {
+                            is_loading = true
+                            Task{
+                                do{
+                                    try await viewModel.create_user()
+                                } catch {
+                                    viewModel.handle(error: error)
+                                }
+                                is_loading = false
+                            }
+                        })
+                        {
+                            Text("yep")
+                        }.buttonStyle(.borderedProminent)
+                        .clipShape(Capsule())
+                        .transition(.slide)
+                    }
+                    .alert(isPresented: $showAlert) {
+                        Alert(title: Text("Error"),
+                              message: Text(viewModel.error_message ?? "An unknown error occurred"),
+                              dismissButton: .default(Text("OK")) {
+                                  viewModel.error_message = nil
+                                viewModel.previous_step()
+                              })
+                    }
+                    .onChange(of: viewModel.error_message) { newErrorMessage in
+                        if let _ = newErrorMessage {
+                            showAlert = true
+                        }
+                    }
+                }
+                if is_loading {
+                        ProgressIndicatorView()
+                    }
+                NavigationLink(destination: UsernameJoiningGroupView(), isActive: $viewModel.yalla_navigate) {
+                    EmptyView()
+                }
             }
         default:
             Button(action: viewModel.first_step){

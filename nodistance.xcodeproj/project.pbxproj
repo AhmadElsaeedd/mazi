@@ -41,6 +41,16 @@
 		6E6EB2A92ADE88BB005A100D /* StartNewFamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6EB2A82ADE88BB005A100D /* StartNewFamView.swift */; };
 		6E6EB2AB2ADE88CE005A100D /* StartNewFamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6EB2AA2ADE88CE005A100D /* StartNewFamViewModel.swift */; };
 		6E6EB2AC2ADEAC13005A100D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6EB2472ADD231A005A100D /* ContentView.swift */; };
+		6E6EB2AE2ADEEE40005A100D /* ProgressIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6EB2AD2ADEEE40005A100D /* ProgressIndicatorView.swift */; };
+		6E6EB2B02ADEF3B5005A100D /* NewFamInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6EB2AF2ADEF3B5005A100D /* NewFamInfoView.swift */; };
+		6E6EB2B22AE02F75005A100D /* UsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6EB2B12AE02F75005A100D /* UsernameView.swift */; };
+		6E6EB2B42AE02FFF005A100D /* UsernameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6EB2B32AE02FFF005A100D /* UsernameViewModel.swift */; };
+		6E6EB2B62AE199C8005A100D /* UsernameJoiningGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6EB2B52AE199C8005A100D /* UsernameJoiningGroupView.swift */; };
+		6E6EB2BC2AE19CE7005A100D /* Username2ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6EB2BB2AE19CE7005A100D /* Username2ViewModel.swift */; };
+		6E6EB2BE2AE19D00005A100D /* Username2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6EB2BD2AE19D00005A100D /* Username2View.swift */; };
+		6E6EB2C02AE1A330005A100D /* LoginLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6EB2BF2AE1A330005A100D /* LoginLinkView.swift */; };
+		6E6EB2C22AE1A39C005A100D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6EB2C12AE1A39C005A100D /* LoginView.swift */; };
+		6E6EB2C42AE1A768005A100D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6EB2C32AE1A768005A100D /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +89,16 @@
 		6E6EB2A62ADE83BC005A100D /* InviteCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteCodeViewModel.swift; sourceTree = "<group>"; };
 		6E6EB2A82ADE88BB005A100D /* StartNewFamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNewFamView.swift; sourceTree = "<group>"; };
 		6E6EB2AA2ADE88CE005A100D /* StartNewFamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNewFamViewModel.swift; sourceTree = "<group>"; };
+		6E6EB2AD2ADEEE40005A100D /* ProgressIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorView.swift; sourceTree = "<group>"; };
+		6E6EB2AF2ADEF3B5005A100D /* NewFamInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFamInfoView.swift; sourceTree = "<group>"; };
+		6E6EB2B12AE02F75005A100D /* UsernameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameView.swift; sourceTree = "<group>"; };
+		6E6EB2B32AE02FFF005A100D /* UsernameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameViewModel.swift; sourceTree = "<group>"; };
+		6E6EB2B52AE199C8005A100D /* UsernameJoiningGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameJoiningGroupView.swift; sourceTree = "<group>"; };
+		6E6EB2BB2AE19CE7005A100D /* Username2ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Username2ViewModel.swift; sourceTree = "<group>"; };
+		6E6EB2BD2AE19D00005A100D /* Username2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Username2View.swift; sourceTree = "<group>"; };
+		6E6EB2BF2AE1A330005A100D /* LoginLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLinkView.swift; sourceTree = "<group>"; };
+		6E6EB2C12AE1A39C005A100D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		6E6EB2C32AE1A768005A100D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +211,13 @@
 				6E6EB2A22ADE829E005A100D /* Greeting.swift */,
 				6E6EB2A42ADE8341005A100D /* InviteCodeView.swift */,
 				6E6EB2A82ADE88BB005A100D /* StartNewFamView.swift */,
+				6E6EB2AD2ADEEE40005A100D /* ProgressIndicatorView.swift */,
+				6E6EB2AF2ADEF3B5005A100D /* NewFamInfoView.swift */,
+				6E6EB2B12AE02F75005A100D /* UsernameView.swift */,
+				6E6EB2B52AE199C8005A100D /* UsernameJoiningGroupView.swift */,
+				6E6EB2BD2AE19D00005A100D /* Username2View.swift */,
+				6E6EB2BF2AE1A330005A100D /* LoginLinkView.swift */,
+				6E6EB2C12AE1A39C005A100D /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +227,9 @@
 			children = (
 				6E6EB2A62ADE83BC005A100D /* InviteCodeViewModel.swift */,
 				6E6EB2AA2ADE88CE005A100D /* StartNewFamViewModel.swift */,
+				6E6EB2B32AE02FFF005A100D /* UsernameViewModel.swift */,
+				6E6EB2BB2AE19CE7005A100D /* Username2ViewModel.swift */,
+				6E6EB2C32AE1A768005A100D /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -368,14 +398,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E6EB2B22AE02F75005A100D /* UsernameView.swift in Sources */,
+				6E6EB2C02AE1A330005A100D /* LoginLinkView.swift in Sources */,
 				6E6EB2A72ADE83BC005A100D /* InviteCodeViewModel.swift in Sources */,
+				6E6EB2BC2AE19CE7005A100D /* Username2ViewModel.swift in Sources */,
+				6E6EB2AE2ADEEE40005A100D /* ProgressIndicatorView.swift in Sources */,
 				6E6EB2AB2ADE88CE005A100D /* StartNewFamViewModel.swift in Sources */,
 				6E6EB29F2ADE8254005A100D /* FirestoreService.swift in Sources */,
 				6E6EB2A52ADE8341005A100D /* InviteCodeView.swift in Sources */,
 				6E6EB2462ADD231A005A100D /* nodistanceApp.swift in Sources */,
+				6E6EB2B62AE199C8005A100D /* UsernameJoiningGroupView.swift in Sources */,
+				6E6EB2B02ADEF3B5005A100D /* NewFamInfoView.swift in Sources */,
+				6E6EB2B42AE02FFF005A100D /* UsernameViewModel.swift in Sources */,
+				6E6EB2C22AE1A39C005A100D /* LoginView.swift in Sources */,
+				6E6EB2BE2AE19D00005A100D /* Username2View.swift in Sources */,
 				6E6EB2AC2ADEAC13005A100D /* ContentView.swift in Sources */,
 				6E6EB2A32ADE829E005A100D /* Greeting.swift in Sources */,
 				6E6EB2A12ADE8264005A100D /* AuthenticationService.swift in Sources */,
+				6E6EB2C42AE1A768005A100D /* LoginViewModel.swift in Sources */,
 				6E6EB2A92ADE88BB005A100D /* StartNewFamView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

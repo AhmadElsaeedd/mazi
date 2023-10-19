@@ -9,14 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Greeting()
-            InviteCodeView(viewModel: InviteCodeViewModel())
-            .padding(.vertical, 50.0)
-            StartNewFamView(viewModel: StartNewFamViewModel())
+        NavigationView{
+            VStack {
+                Greeting()
+                InviteCodeView(viewModel: InviteCodeViewModel())
+                .padding(.vertical, 50.0)
+                StartNewFamView(viewModel: StartNewFamViewModel())
+                .padding(.vertical, 50)
+                LoginLinkView()
+            }
             .padding()
         }
-        .padding()
     }
 }
 
