@@ -161,4 +161,9 @@ class FirestoreService {
         }
         
     }
+    
+    func add_message() -> Bool {
+        print("message added")
+        return true
+    }
 }

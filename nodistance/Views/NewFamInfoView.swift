@@ -9,13 +9,11 @@ import SwiftUI
 
 struct NewFamInfoView: View {
     var body: some View {
-        NavigationView{
             VStack{
                 Greeting()
                 UsernameView(viewModel: UsernameViewModel())
             }
             .padding()
-        }
     }
 }
 

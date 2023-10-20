@@ -14,7 +14,6 @@ struct LoginView: View {
     @State private var alertMessage: String = ""
     
     var body: some View {
-        NavigationView{
             VStack{
                 Greeting()
                 VStack{
@@ -45,9 +44,11 @@ struct LoginView: View {
                     .tint(.cyan)
                     
                 }
+                NavigationLink(destination: HomepageView(), isActive: $viewModel.yalla_navigate) {
+                    EmptyView()
+                }
             }
             .padding()
-        }
     }
 }
 

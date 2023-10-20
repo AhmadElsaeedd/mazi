@@ -63,6 +63,12 @@ class AuthenticationService{
             }
         }
     
+    func logout() async throws -> Bool {
+        try auth.signOut()
+        return true
+    }
+
+    
     func get_user_id() -> String? {
         return auth.currentUser?.uid
     }

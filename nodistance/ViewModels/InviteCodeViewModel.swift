@@ -66,25 +66,6 @@ class InviteCodeViewModel : ObservableObject {
         }
     }
     
-//    func check_email() async throws {
-//        print("checking email")
-//        let email_format_is_valid = isValidEmail(email)
-//        if(!email_format_is_valid){
-//            throw AuthenticationService.CustomError.invalidEmail
-//        }
-//        else{
-//            let email_exists = try await authentication_service.check_email_exists(email: email)
-//            if email_exists {
-//                print("email existss")
-//                throw AuthenticationService.CustomError.emailInUse
-//            }
-//            else {
-//                print("email doesn't exist")
-//                self.next_step()
-//            }
-//        }
-//    }
-    
     //to check if the email is valid
     func isValidEmail(_ email: String) -> Bool {
         let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"

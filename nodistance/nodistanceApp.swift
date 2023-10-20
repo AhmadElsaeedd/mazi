@@ -22,6 +22,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct nodistanceApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
+    @StateObject private var watchFunctionsViewModel = WatchFunctionsViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
